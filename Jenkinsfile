@@ -3,14 +3,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Installing dependencies...'
-                sh 'pip install --user -r requirements.txt' // Install dependencies globally for the user
+                echo "Building..."
+		sh 'python3 --version'
             }
         }
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                sh 'python -m unittest discover tests' // Run tests directly
+                sh 'python3 -m unittest discover tests' // Run tests directly
             }
         }
     }
