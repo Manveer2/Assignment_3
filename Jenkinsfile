@@ -19,7 +19,7 @@ pipeline {
             steps {
                 echo 'Running tests...'
                 // Run tests within the virtual environment
-                sh './venv/bin/python3 -m unittest discover tests'
+                sh './venv/bin/python3 -m unittest discover Tests'
             }
         }
     }
