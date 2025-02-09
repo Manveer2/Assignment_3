@@ -26,7 +26,7 @@ pipeline {
 
     	    steps {
 
-        	sh 'trivy image web-app'
+        	sh 'trivy image thirsty_khorana'
 
    	    }
 
