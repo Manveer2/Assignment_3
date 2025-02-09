@@ -22,5 +22,14 @@ pipeline {
                 sh './venv/bin/python3 -m unittest discover Tests'
             }
         }
+	stage('Vulnerability Scan') {
+
+    	    steps {
+
+        	sh 'trivy image web-app'
+
+   	    }
+
+	}
     }
 }
