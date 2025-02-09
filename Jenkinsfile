@@ -19,7 +19,7 @@ pipeline {
 
     	    steps {
 
-        	sh '/usr/local/bin/trivy image jenkins/jenkins:lts'
+        	sh 'trivy image jenkins/jenkins:lts'
 
    	    }
 
