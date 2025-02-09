@@ -15,13 +15,6 @@ pipeline {
                 sh './venv/bin/pip install -r requirements.txt'
             }
         }
-        stage('Test') {
-            steps {
-                echo 'Running tests...'
-                // Run tests within the virtual environment
-                sh './venv/bin/python3 -m unittest discover Tests'
-            }
-        }
 	stage('Vulnerability Scan') {
 
     	    steps {
@@ -31,5 +24,12 @@ pipeline {
    	    }
 
 	}
+        stage('Test') {
+            steps {
+                echo 'Running tests...'
+                // Run tests within the virtual environment
+                sh './venv/bin/python3 -m unittest discover Tests'
+            }
+        }
     }
 }
