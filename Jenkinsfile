@@ -26,7 +26,7 @@ pipeline {
 
     	    steps {
 		script{
-        	    sh 'trivy image --timeout 10m --skip-java-db jenkins/jenkins:lts'
+        	    sh 'trivy image --timeout 10m jenkins/jenkins:lts'
 		}
 
    	    }
