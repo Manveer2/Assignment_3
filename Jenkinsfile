@@ -15,11 +15,19 @@ pipeline {
                 sh './venv/bin/pip install -r requirements.txt'
             }
         }
+	stage('Update Trivy DB') {
+    	    steps {
+                script {
+                    sh 'trivy image --download-db-only'
+        }
+    }
+}
 	stage('Vulnerability Scan') {
 
     	    steps {
-
-        	sh 'trivy image jenkins/jenkins:lts'
+		script{
+        	    sh 'trivy image --timeout 10m --skip-java-db jenkins/jenkins:lts'
+		}
 
    	    }
 
